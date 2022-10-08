@@ -13,8 +13,8 @@ def sozdanie_viborki(n):
 def sortirovka(spisok):
     buf = []
     while spisok:
-        for _ in range(len(spisok)):
-            mini = spisok[0]
+        for o in spisok:
+            mini = o
             for i in spisok:
                 if i <= mini:
                     mini = i
@@ -49,8 +49,7 @@ def q75(spisok):
 
 # данные необходимые для построения ящика с усами
 def box_plot():
-    razmer_viborki = int(input('Введите размер выборки: '))
-    elements = sortirovka(sozdanie_viborki(razmer_viborki))
+    elements = sortirovka(sozdanie_viborki(int(input('Введите размер выборки: '))))
     print()
     print(f'Медиана: {mediana(elements)}')
     q25(elements)
